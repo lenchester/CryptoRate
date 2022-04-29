@@ -18,7 +18,7 @@ class BotController extends Controller
         $chat = TelegraphChat::find(1);
         $chat->message('hello world')
             ->keyboard(Keyboard::make()->buttons([
-                Button::make('Delete')->action('delete')->param('id', '42'),
+                Button::make('Delete'),
                 Button::make('open')->url('https://test.it'),
             ]))->send();
     }
