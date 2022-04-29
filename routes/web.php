@@ -19,3 +19,8 @@ Route::get('/', [\App\Http\Controllers\BotController::class, 'sendMessage']);
     dd(json_decode($http->body()));
 });*/
 Route::post('/webhook', [\App\Http\Controllers\WebhookController::class, 'index']);
+Route::get('/key', [\App\Http\Controllers\BotController::class, 'sendKeyboard']);
+Route::get('/info', function() {
+    $http = \Illuminate\Support\Facades\Http::get('https://api.telegram.org/bot5203032567:AAE6r0SsNksa9hlo_mn7aAIf3r7KcL6x3rU/getWebhookInfo');
+    dd(json_decode($http->body()));
+});
