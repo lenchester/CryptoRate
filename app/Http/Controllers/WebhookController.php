@@ -9,9 +9,9 @@ class WebhookController extends Controller
 {
     public function index(Request $request){
         Log::debug($request->all());
-        $data = $request->all();
-        $chat_id = $data['message']['chat']['id'];
-        $text = $data['message']['text'];
+        $message = $request->input('message');
+        $chat_id = $message['from']['id'];
+        $text = $message['text'];
         if($text == '/start'){
             $this->start($chat_id);
         }
@@ -20,7 +20,7 @@ class WebhookController extends Controller
     }
 
     public function start($chat_id){
-        $chat = TelegraphChat::find($chat_id);
+        $chat = TelegraphChat::find(1);
         $chat->message("Hi!");
     }
 }
