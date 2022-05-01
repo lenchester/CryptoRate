@@ -10,14 +10,10 @@ class WebhookController extends Controller
     public function index(Request $request){
         Log::debug($request->all());
         $message = $request->input('message');
-        Log::debug($message);
-        Log::debug($message["from"]);
         $from = $message["from"];
-        Log::debug($from["id"]);
-//        if($text == '/start'){
-//            $this->start($chat_id);
-//        }
-        //Log::debug($request->all());
+        $chat_id = $from["id"];
+        $this->start($chat_id);
+        Log::debug($request->all());
 
     }
 
