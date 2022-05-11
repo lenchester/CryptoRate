@@ -16,8 +16,8 @@ class WebhookController extends Controller
     }
 
     public function start($chat_id){
+        $chat = TelegraphChat::where('chat_id', $chat_id);
         Log::debug($chat_id);
-        $chat = TelegraphChat::find(1);
         $chat->message("Hi!");
     }
 }
