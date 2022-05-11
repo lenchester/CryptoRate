@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WebhookController extends Controller
 {
     public function index(Request $request){
-        Log::debug($request->all());
+        Log::debug($request->getContent());
         $chat_id = $request->input('message.from.id');
         $text = $request->input('message.text');
         $this->start($chat_id, $text);
