@@ -10,8 +10,11 @@ use Illuminate\Http\Request;
 class BotController extends Controller
 {
     function sendMessage(){
+        $chat_id = 489682696;
+        $chat = TelegraphChat::where('chat_id', $chat_id)->first();
         //$chat = TelegraphChat::find(1);
-        //$chat->message('hello')->send();
+        //dd($chat);
+        $chat->message('Hi')->send();
     }
 
     function sendKeyboard(){
