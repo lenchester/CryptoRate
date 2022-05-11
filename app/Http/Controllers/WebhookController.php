@@ -11,7 +11,7 @@ class WebhookController extends Controller
         Log::debug($request->all());
         $chat_id = $request->input('message.from.id');
         $text = $request->input('message.text');
-        $this->start($chat_id. $text);
+        $this->start($chat_id, $text);
     }
 
     public function start($chat_id, $text){
