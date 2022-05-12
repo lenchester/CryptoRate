@@ -19,6 +19,6 @@ class TelegramWebhookHandler extends \DefStudio\Telegraph\Handlers\WebhookHandle
     public function compare(){
         $pair = new CryptoCompare(new Http());
         $price = $pair->getPrice('BTC', 'KZT');
-        $this->chat->message("BTC price = $price KZT");
+        $this->chat->message("BTC price = $price KZT")->send();
     }
 }
