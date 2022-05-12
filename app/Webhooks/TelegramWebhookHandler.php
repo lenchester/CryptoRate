@@ -9,7 +9,7 @@ class TelegramWebhookHandler extends \DefStudio\Telegraph\Handlers\WebhookHandle
         $this->chat->markdown("*Hi* happy to be here!")->send();
     }
 
-    protected function start(){
+    public function start(){
         $this->chat->markdown("*Hi* happy to be here!")->send();
     }
 }
