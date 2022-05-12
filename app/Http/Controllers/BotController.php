@@ -14,7 +14,7 @@ class BotController extends Controller
         $chat = TelegraphChat::where('chat_id', $chat_id)->first();
         //$chat = TelegraphChat::find(1);
         //dd($chat);
-        $chat->message('Hi')->send();
+        //$chat->message('Hi')->send();
     }
 
     function sendKeyboard(){

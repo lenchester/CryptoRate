@@ -19,7 +19,7 @@ class WebhookController extends Controller
         if($text == '/start'){
             $chat->message("Hi!")->send();
         }
-        else{
+        elseif($text != null || $text != ""){
             $chat->message($text)->send();
         }
     }
