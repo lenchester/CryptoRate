@@ -1,8 +1,7 @@
 <?php
 
-use DefStudio\Telegraph\Handlers\EmptyWebhookHandler;
+use App\Webhooks\TelegramWebhookHandler;
 use DefStudio\Telegraph\Telegraph;
-
 return [
     /*
      * Sets Telegraph messages default parse mode
@@ -16,7 +15,7 @@ return [
      *
      * For reference, see https://def-studio.github.io/telegraph/webhooks/overview
      */
-    'webhook_handler' => EmptyWebhookHandler::class,
+    'webhook_handler' => TelegramWebhookHandler::class,
 
     /*
      * If enabled, Telegraph dumps received
@@ -25,7 +24,7 @@ return [
     'debug_mode' => false,
 
     /*
-     * Set model class for both TelegraphBot and TelegraphChat, 
+     * Set model class for both TelegraphBot and TelegraphChat,
      * to allow more customization.
      *
      * Bot model must be or extend `DefStudio\Telegraph\Models\TelegraphBot::class`
