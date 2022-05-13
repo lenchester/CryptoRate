@@ -12,7 +12,8 @@ class CryptoCompare
     {
         $this->http = $http;
     }
-    public function getPrice($coin, $currency){
+    public function getPrice($coin, $currency)
+    {
         try{
             assert(in_array($coin, self::valid_coins) && in_array($currency, self::valid_currencies));
         }
